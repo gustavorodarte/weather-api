@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "todolist"
+name = "weather"
 version = "1.0.0"
-description = "TODO aplication made with Python's FastAPI framework and Hexagonal Architecture"
-authors = ["Giovanni Armane <giovanniarmane@gmail.com>"]
+description = "Weather application to Genome Code Challenge"
+authors = ["Gustavo Rodarte<gustavo.rodarte@live.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
