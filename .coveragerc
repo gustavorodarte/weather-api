@@ -1,0 +1,7 @@
+[run]
+omit =
+    weather/__main__.py
+    weather/__init__.py
+    weather/infra/database/alembic/*
+    weather/infra/database/seeds.py
+    weather/infra/database/sqlalchemy.py
