@@ -18,6 +18,7 @@ class Settings(BaseSettings):
     OPEN_WEATHER_MAP_URL: str
     OPEN_WEATHER_MAP_API_TOKEN: str
 
+
 def _initial_settings_clojure() -> Callable[[], Settings]:
     load_dotenv()
     settings = Settings()

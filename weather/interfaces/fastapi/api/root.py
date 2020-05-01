@@ -38,5 +38,4 @@ def health_check():
         "description": settings.WEB_APP_DESCRIPTION,
         "version": settings.WEB_APP_VERSION,
         "status": StatusEnum.OK,
-
     }

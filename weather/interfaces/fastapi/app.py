@@ -13,6 +13,7 @@ def _create_instance(settings: Settings) -> FastAPI:
         version=settings.WEB_APP_VERSION,
     )
 
+
 def _register_routers(app: FastAPI) -> FastAPI:
     app.include_router(root.router)
     app.include_router(weather.router, prefix="/weather")
@@ -21,8 +22,6 @@ def _register_routers(app: FastAPI) -> FastAPI:
 
 def init_app(settings: Settings) -> FastAPI:
     app: FastAPI = pipe(
-        settings,
-        _create_instance,
-        _register_routers,
+        settings, _create_instance, _register_routers,
     )
     return app
