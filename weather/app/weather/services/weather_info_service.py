@@ -1,10 +1,5 @@
 from typing import Awaitable, Callable, Iterable, Optional, Tuple, TypeVar
 
-from weather.domain.entities.weather_info import WeatherInfo
-
-FetchWeatherFnType = Callable[[str], Awaitable[WeatherInfo]]
-
-
-async def get_info(fetch_weather_info: FetchWeatherFnType, city_name: str) -> WeatherInfo:
+async def get_info(fetch_weather_info, city_name):
     result = await fetch_weather_info(city_name)
     return result

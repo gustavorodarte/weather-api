@@ -1,9 +1,10 @@
 from weather.config.environment import get_current_settings
 from weather.infra.open_weather_api.open_weather_api_mapper import to_entity
 from weather.domain.entities.weather_info import WeatherInfo
-from weather.infra.requests.requests import init_requests
+import requests_async as requests
+from typing import Tuple, Any
 
-requests = init_requests()
+
 
 _SETTINGS = get_current_settings()
 
@@ -16,11 +17,9 @@ async def make_request(city_name: str):
     return result.json()
 
 
-async def get_current_weather_by_city(city_name: str) -> WeatherInfo:
-    result = await make_request(city_name)
-    print(result)
-    if(result["cod"] != 200):
-        return {
-            "err": result,
-        }
-    return to_entity(result)
+async def get_current_weather_by_city(city_name: str) -> Tuple[bool, Any]:
+    request_result = await make_request(city_name)
+    if(request_result["cod"] == 200):
+        return False, to_entity(request_result)
+    
+    return True, None

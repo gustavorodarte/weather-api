@@ -2,7 +2,7 @@
 
 ## Description
 
- Application that display the weather information for any given city made with Python's FastAPI framework and Clean Architecture.
+ Application that display the weather information for any given city made with Python's FastAPI framework inspired in Clean Architecture and DDD principles.
 
 ## Overview
 
@@ -42,10 +42,10 @@ In this project
 
 * Run migrations with: `alembic upgrade head`
 * Test the API with: `pytest`
-* Check code style with: `black --check todolist`
-* Format code with: `black todolist`
-* Lint the code with: `flake8 todolist tests`
-* Run static analysis with: `mypy job_form_api tests`
+* Check code style with: `black --check weather`
+* Format code with: `black weather`
+* Lint the code with: `flake8 weather tests`
+* Run static analysis with: `mypy weather tests`
 
 
 ## Knowing Issues
@@ -55,6 +55,7 @@ In this project
 # To Improve
 
 * The API should be capable to receive a geolocation and return the weather conditions, at the moment only city names are available.
-* Cache the fetched weather data, unfortunately, I don't have time to implement the request cache, my original plan was implementing a Redis to cache the API data. 
+* Cache the fetched weather data, unfortunately, I don't have time to implement the request cache, my original plan was implementing a Redis to cache the API data.
+* Types: some functions and variables not has types.
 
 
