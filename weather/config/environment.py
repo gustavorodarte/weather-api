@@ -1,6 +1,7 @@
 from typing import Callable
 
 from dotenv import load_dotenv
+from pydantic import BaseSettings 
 
 
 class Settings(BaseSettings):

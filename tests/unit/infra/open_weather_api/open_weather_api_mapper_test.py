@@ -2,7 +2,6 @@ import pytest
 from weather.app.weather.entities.weather_info import WeatherInfo, Location, CurrentWeather
 from weather.infra.open_weather_api.open_weather_api_mapper import to_entity
 
-
 # Types
 DataType = Dict[str, Any]
 
