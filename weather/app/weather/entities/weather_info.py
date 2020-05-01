@@ -1,11 +1,10 @@
 from pydantic import BaseModel, Field
+from .current_weather import CurrentWeather
+from .location import Location
 
 class WeatherInfo(BaseModel):
-    city_name: str
-    temp: float
-    temp_min: float
-    temp_max: float 
-    main: str
+    location: Location
+    current_weather: CurrentWeather
 
     class Config:
         allow_mutation = False

@@ -7,6 +7,6 @@ def to_entity(data: Dict) -> WeatherInfo:
     'temp': data['main']['temp'],
     'temp_min': data['main']['temp_min'],
     'temp_max': data['main']['temp_max'],
-    'main': data['weather'][0]['main'],
+    'weather_description': data['weather'][0]['main'],
   }
   return WeatherInfo(**weather_info)
