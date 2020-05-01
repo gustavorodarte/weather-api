@@ -838,6 +838,22 @@ requests = ">=2.0.0,<3.0.0"
 
 [[package]]
 category = "main"
+description = "Mock out responses from the requests package"
+name = "requests-mock"
+optional = false
+python-versions = "*"
+version = "1.7.0"
+
+[package.dependencies]
+requests = ">=2.3,<3"
+six = "*"
+
+[package.extras]
+fixture = ["fixtures"]
+test = ["fixtures", "mock", "purl", "pytest", "sphinx", "testrepository (>=0.0.18)", "testtools"]
+
+[[package]]
+category = "main"
 description = "Validating URI References per RFC 3986"
 name = "rfc3986"
 optional = false
@@ -996,7 +1012,7 @@ python-versions = ">=3.6.1"
 version = "8.1"
 
 [metadata]
-content-hash = "8ef8d3df3a3417530253cb56448568d3ddf2a2a10448fc8152d3c6073a06ab1c"
+content-hash = "078f00f73753149f85685583c1e70bbb39b97bc6b7452200f490915bf96210cb"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -1488,6 +1504,10 @@ requests = [
 ]
 requests-async = [
     {file = "requests-async-0.6.2.tar.gz", hash = "sha256:8f128b66dec2974aa263e24410914b1829d3e1506497364c2edfa10112f55e0b"},
+]
+requests-mock = [
+    {file = "requests-mock-1.7.0.tar.gz", hash = "sha256:88d3402dd8b3c69a9e4f9d3a73ad11b15920c6efd36bc27bf1f701cf4a8e4646"},
+    {file = "requests_mock-1.7.0-py2.py3-none-any.whl", hash = "sha256:510df890afe08d36eca5bb16b4aa6308a6f85e3159ad3013bac8b9de7bd5a010"},
 ]
 rfc3986 = [
     {file = "rfc3986-1.4.0-py2.py3-none-any.whl", hash = "sha256:af9147e9aceda37c91a05f4deb128d4b4b49d6b199775fd2d2927768abdc8f50"},
