@@ -21,7 +21,11 @@ def valid_data_fixture() -> DataType:
 
 @pytest.fixture(name="invalid_data")
 def invalid_data_fixture() -> DataType:
-    return {"city_name": "some string", "longitude": "some  int", 'latitude': 'some int' }
+    return {
+        "city_name": "some string", 
+        "longitude": "some  int", 
+        "latitude": 'some int'
+    }
 
 
 @pytest.mark.unit

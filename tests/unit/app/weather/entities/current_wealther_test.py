@@ -137,7 +137,6 @@ class TestLocation:
 
             self.assert_validation_error("value_error.missing", excinfo)
 
-      
     class TestPressure:
         assert_validation_error = partial(assert_validation_error, 1, "pressure")
 
@@ -154,4 +153,3 @@ class TestLocation:
                 CurrentWeather(**valid_data)
 
             self.assert_validation_error("value_error.missing", excinfo)
-

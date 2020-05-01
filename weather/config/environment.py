@@ -1,7 +1,6 @@
 from typing import Callable
 
 from dotenv import load_dotenv
-from pydantic import BaseSettings, PostgresDsn
 
 
 class Settings(BaseSettings):
