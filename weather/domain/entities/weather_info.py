@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from .current_weather import CurrentWeather
 from .location import Location
 

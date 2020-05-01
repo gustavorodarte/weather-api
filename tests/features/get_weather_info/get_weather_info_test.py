@@ -8,37 +8,34 @@ _SETTINGS = get_current_settings()
 
 _SETTINGS.ENV = "testing"
 
+
 @pytest.fixture(name="test_client")
 def test_client_fixture():
-  return TestClient(init_app(_SETTINGS))
+    return TestClient(init_app(_SETTINGS))
 
-@pytest.fixture(name="r_mock")
-def requests_mock_fixture():
-  return requests_mock.Mocker(real_http=False)
 
-    
 @pytest.fixture(name="valid_response")
 def valid_response_fixture():
     location = {
-      'city_name': 'Shuzenji',
-      'longitude': 139,
-      'latitude': 35,
+        "city_name": "Shuzenji",
+        "longitude": 139,
+        "latitude": 35,
     }
 
     current_weather = {
-      'temp': 281.52,
-      'max_temp': 283.71,
-      'min_temp': 280.15,
-      'weather_description': 'clear sky',
-      'humidity': 93,
-      'pressure': 1016,
+        "temp": 281.52,
+        "max_temp": 283.71,
+        "min_temp": 280.15,
+        "weather_description": "clear sky",
+        "humidity": 93,
+        "pressure": 1016,
     }
 
     weather_info = {
         "location": Location(**location),
         "current_weather": CurrentWeather(**current_weather),
-     }
- 
+    }
+
     return WeatherInfo(**weather_info).dict()
 
 
@@ -56,4 +53,4 @@ class TestGetWeatherInfo:
             response = test_client.get(f"weather/info?city_name=New%20York")
             data, status_code = response.json(), response.status_code
             assert status_code == 503
-            assert data['detail'] == "Weather Info can not be fetched"
+            assert data["detail"] == "Weather Info can not be fetched"

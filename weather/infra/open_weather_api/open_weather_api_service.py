@@ -1,6 +1,5 @@
 from weather.config.environment import get_current_settings
 from weather.infra.open_weather_api.open_weather_api_mapper import to_entity
-from weather.domain.entities.weather_info import WeatherInfo
 import requests_async as requests
 from typing import Tuple, Any
 

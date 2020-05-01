@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import HTTPException
 from fastapi.routing import APIRouter
 from weather.app.weather.services.weather_info_service import get_info
 from weather.domain.entities.weather_info import WeatherInfo

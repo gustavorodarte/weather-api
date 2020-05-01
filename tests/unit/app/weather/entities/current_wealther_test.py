@@ -13,24 +13,24 @@ DataType = Dict[str, Any]
 @pytest.fixture(name="valid_data")
 def valid_data_fixture() -> DataType:
     return {
-      'temp': 281.52,
-      'max_temp': 283.71,
-      'min_temp': 280.15,
-      'weather_description': 'clear sky',
-      'humidity': 1016,
-      'pressure': 93,
+        "temp": 281.52,
+        "max_temp": 283.71,
+        "min_temp": 280.15,
+        "weather_description": "clear sky",
+        "humidity": 1016,
+        "pressure": 93,
     }
 
 
 @pytest.fixture(name="invalid_data")
 def invalid_data_fixture() -> DataType:
     return {
-      'temp': 'some temp',
-      'max_temp': 'some max_temp',
-      'min_temp': 'some min temp',
-      'weather_description': ['some string'],
-      'humidity': 'some string',
-      'pressure': '93',
+        "temp": "some temp",
+        "max_temp": "some max_temp",
+        "min_temp": "some min temp",
+        "weather_description": ["some string"],
+        "humidity": "some string",
+        "pressure": "93",
     }
 
 
@@ -66,7 +66,7 @@ class TestLocation:
                 CurrentWeather(**valid_data)
 
             self.assert_validation_error("value_error.missing", excinfo)
-   
+
     class TestMaxTemp:
         assert_validation_error = partial(assert_validation_error, 1, "max_temp")
 
@@ -83,7 +83,7 @@ class TestLocation:
                 CurrentWeather(**valid_data)
 
             self.assert_validation_error("value_error.missing", excinfo)
-    
+
     class TestMinTemp:
         assert_validation_error = partial(assert_validation_error, 1, "min_temp")
 
@@ -101,13 +101,14 @@ class TestLocation:
 
             self.assert_validation_error("value_error.missing", excinfo)
 
-    
     class TestWeatherDescription:
-        assert_validation_error = partial(assert_validation_error, 1, "weather_description")
+        assert_validation_error = partial(
+            assert_validation_error, 1, "weather_description"
+        )
 
         def test_must_be_float(self, valid_data):
             with pytest.raises(ValidationError) as excinfo:
-                valid_data.update({"weather_description": ['some string']})
+                valid_data.update({"weather_description": ["some string"]})
                 CurrentWeather(**valid_data)
 
             self.assert_validation_error("type_error.str", excinfo)
@@ -119,13 +120,12 @@ class TestLocation:
 
             self.assert_validation_error("value_error.missing", excinfo)
 
-    
     class TestHumidity:
         assert_validation_error = partial(assert_validation_error, 1, "humidity")
 
         def test_must_be_float(self, valid_data):
             with pytest.raises(ValidationError) as excinfo:
-                valid_data.update({"humidity": 'some string'})
+                valid_data.update({"humidity": "some string"})
                 CurrentWeather(**valid_data)
 
             self.assert_validation_error("type_error.integer", excinfo)
@@ -142,7 +142,7 @@ class TestLocation:
 
         def test_must_be_float(self, valid_data):
             with pytest.raises(ValidationError) as excinfo:
-                valid_data.update({"pressure": 'some string'})
+                valid_data.update({"pressure": "some string"})
                 CurrentWeather(**valid_data)
 
             self.assert_validation_error("type_error.integer", excinfo)

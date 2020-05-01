@@ -13,18 +13,18 @@ DataType = Dict[str, Any]
 @pytest.fixture(name="valid_data")
 def valid_data_fixture() -> DataType:
     return {
-      'city_name': 'Shuzenji',
-      'longitude': 139,
-      'latitude': 35,
+        "city_name": "Shuzenji",
+        "longitude": 139,
+        "latitude": 35,
     }
 
 
 @pytest.fixture(name="invalid_data")
 def invalid_data_fixture() -> DataType:
     return {
-        "city_name": "some string", 
-        "longitude": "some  int", 
-        "latitude": 'some int'
+        "city_name": "some string",
+        "longitude": "some  int",
+        "latitude": "some int",
     }
 
 
@@ -77,7 +77,7 @@ class TestLocation:
                 Location(**valid_data)
 
             self.assert_validation_error("value_error.missing", excinfo)
-    
+
     class TestLatitude:
         assert_validation_error = partial(assert_validation_error, 1, "latitude")
 
@@ -94,4 +94,3 @@ class TestLocation:
                 Location(**valid_data)
 
             self.assert_validation_error("value_error.missing", excinfo)
-

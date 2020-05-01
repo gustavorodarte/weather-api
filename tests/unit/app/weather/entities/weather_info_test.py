@@ -14,18 +14,18 @@ DataType = Dict[str, Any]
 def valid_data_fixture() -> DataType:
 
     location = {
-      'city_name': 'Shuzenji',
-      'longitude': 139,
-      'latitude': 35,
+        "city_name": "Shuzenji",
+        "longitude": 139,
+        "latitude": 35,
     }
 
     current_weather = {
-      'temp': 281.52,
-      'max_temp': 283.71,
-      'min_temp': 280.15,
-      'weather_description': 'clear sky',
-      'humidity': 1016,
-      'pressure': 93,
+        "temp": 281.52,
+        "max_temp": 283.71,
+        "min_temp": 280.15,
+        "weather_description": "clear sky",
+        "humidity": 1016,
+        "pressure": 93,
     }
 
     return {
@@ -88,4 +88,3 @@ class TestWeatherInfo:
                 WeatherInfo(**valid_data)
 
             self.assert_validation_error("value_error.missing", excinfo)
-
