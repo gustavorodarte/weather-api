@@ -1,6 +1,6 @@
 from typing import Awaitable, Callable, Iterable, Optional, Tuple, TypeVar
 
-from weather.app.weather.entities.weather_info import WeatherInfo
+from weather.domain.entities.weather_info import WeatherInfo
 
 FetchWeatherFnType = Callable[[str], Awaitable[WeatherInfo]]
 

@@ -21,9 +21,10 @@ This project is comprised of the following languages and libraries:
 
 Auxiliary libraries were omitted but can be found in the [pyproject](https://github.com/gustavorodarte/weather-api/blob/master/pyproject.toml) file.
 
-## Running
+In this project 
 
-To executed the project it is recommended to have these utilities installed in a local development machine:
+
+## Running
 
 * Start a container with: `docker-compose run --rm --service-ports app ash`
 * Inside the container run: `poetry install`
@@ -32,10 +33,9 @@ To executed the project it is recommended to have these utilities installed in a
 
 ## Testing
 
-* Start a container with: `docker-compose run --rm --service-ports app ash`
+* Start a container with: `docker-compose run --rm --service-ports tests ash`
 * Inside the container run: `poetry install`
 * Test the API with: `pytest`
-
 
 
 ## Linting, static check and code style guide
@@ -48,6 +48,13 @@ To executed the project it is recommended to have these utilities installed in a
 * Run static analysis with: `mypy job_form_api tests`
 
 
-## TO IMPROVE
+## Knowing Issues
+
+* The Feature Test isn't passing fully, I had a problem to mock the lib request_async, so when running the feature test the request to Open Weather Map is made.
+
+# To Improve
+
+* The API should be capable to receive a geolocation and return the weather conditions, at the moment only city names are available.
+* Cache the fetched weather data, unfortunately, I don't have time to implement the request cache, my original plan was implementing a Redis to cache the API data. 
 
 

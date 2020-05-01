@@ -1,6 +1,6 @@
 from weather.config.environment import get_current_settings
 from weather.infra.open_weather_api.open_weather_api_mapper import to_entity
-from weather.app.weather.entities.weather_info import WeatherInfo
+from weather.domain.entities.weather_info import WeatherInfo
 from weather.infra.requests.requests import init_requests
 
 requests = init_requests()

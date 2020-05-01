@@ -3,7 +3,7 @@ from typing import Any, Dict
 import pytest
 from pydantic import ValidationError
 from tests.utils.asserts import assert_validation_error
-from weather.app.weather.entities.weather_info import WeatherInfo, Location, CurrentWeather
+from weather.domain.entities.weather_info import WeatherInfo, Location, CurrentWeather
 
 # Types
 DataType = Dict[str, Any]

@@ -1,4 +1,4 @@
-from weather.app.weather.entities.weather_info import (
+from weather.domain.entities.weather_info import (
     WeatherInfo,
     Location,
     CurrentWeather,

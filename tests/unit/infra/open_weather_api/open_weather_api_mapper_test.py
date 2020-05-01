@@ -1,14 +1,10 @@
 import pytest
-from weather.app.weather.entities.weather_info import WeatherInfo, Location, CurrentWeather
+from weather.domain.entities.weather_info import WeatherInfo, Location, CurrentWeather
 from weather.infra.open_weather_api.open_weather_api_mapper import to_entity
-
-# Types
-DataType = Dict[str, Any]
-
 
 # Fixtures
 @pytest.fixture(name="api_payload")
-def api_payload_fixture() -> DataType:
+def api_payload_fixture():
     return {
       "coord": { "lon": 139,"lat": 35},
       "weather": [
@@ -52,7 +48,7 @@ def api_payload_fixture() -> DataType:
 
 
 @pytest.fixture(name="valid_entity")
-def valid_entity_fixture() -> DataType:
+def valid_entity_fixture():
 
     location = {
       'city_name': 'Shuzenji',

@@ -1,7 +1,7 @@
 import pytest
 
 from weather.app.weather.services.weather_info_service import get_info
-from weather.app.weather.entities.weather_info import WeatherInfo, Location, CurrentWeather
+from weather.domain.entities.weather_info import WeatherInfo, Location, CurrentWeather
 
 @pytest.fixture(name="city_name")
 def city_name():
