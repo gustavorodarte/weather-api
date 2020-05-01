@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 class Location(BaseModel):
     city_name: str
     longitude: int

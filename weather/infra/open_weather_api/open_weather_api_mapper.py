@@ -1,6 +1,6 @@
-from weather.domain.entities.weather_info import WeatherInfo;
-from weather.domain.entities.location import Location;
-from weather.domain.entities.current_weather import CurrentWeather;
+from weather.domain.entities.weather_info import WeatherInfo
+from weather.domain.entities.location import Location
+from weather.domain.entities.current_weather import CurrentWeather
 
 from typing import Dict
 
