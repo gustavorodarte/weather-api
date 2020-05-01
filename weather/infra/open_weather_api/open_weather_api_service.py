@@ -9,11 +9,16 @@ _SETTINGS = get_current_settings()
 async def make_request(city_name: str):
     payload = {"q": city_name, "appid": _SETTINGS.OPEN_WEATHER_MAP_API_TOKEN}
     result = await requests.get(
-        f"http://{_SETTINGS.OPEN_WEATHER_MAP_URL}/weather/", params=payload
+        f"{_SETTINGS.OPEN_WEATHER_MAP_URL}/weather/", params=payload
     )
     return result.json()
 
 
 async def get_current_weather_by_city(city_name: str) -> WeatherInfo:
     result = await make_request(city_name)
+    print(result)
+    if(result["cod"] != 200):
+        return {
+            "err": result,
+        }
     return to_entity(result)
