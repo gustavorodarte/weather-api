@@ -2,7 +2,7 @@ from fastapi.applications import FastAPI
 from toolz import pipe
 
 from weather.config.environment import Settings
-from weather.interfaces.fastapi.api import root
+from weather.interfaces.fastapi.api import weather, root
 
 
 def _create_instance(settings: Settings) -> FastAPI:
@@ -15,7 +15,7 @@ def _create_instance(settings: Settings) -> FastAPI:
 
 def _register_routers(app: FastAPI) -> FastAPI:
     app.include_router(root.router)
-    # app.include_router(weather.router, prefix="/weather")
+    app.include_router(weather.router, prefix="/weather")
     return app
 
 

@@ -15,7 +15,8 @@ class Settings(BaseSettings):
     WEB_SERVER_HOST: str
     WEB_SERVER_PORT: int
     WEB_SERVER_RELOAD: bool
-
+    OPEN_WEATHER_MAP_URL: str
+    OPEN_WEATHER_MAP_API_TOKEN: str
 
 def _initial_settings_clojure() -> Callable[[], Settings]:
     load_dotenv()
