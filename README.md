@@ -21,8 +21,6 @@ This project is comprised of the following languages and libraries:
 
 Auxiliary libraries were omitted but can be found in the [pyproject](https://github.com/gustavorodarte/weather-api/blob/master/pyproject.toml) file.
 
-In this project 
-
 
 ## Running
 
@@ -52,7 +50,7 @@ In this project
 
 * The Feature Test isn't passing fully, I had a problem to mock the lib request_async, so when running the feature test the request to Open Weather Map is made.
 
-# To Improve
+## To Improve
 
 * The API should be capable to receive a geolocation and return the weather conditions, at the moment only city names are available.
 * Cache the fetched weather data, unfortunately, I don't have time to implement the request cache, my original plan was implementing a Redis to cache the API data.
