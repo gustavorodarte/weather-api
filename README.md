@@ -22,12 +22,20 @@ This project is comprised of the following languages and libraries:
 Auxiliary libraries were omitted but can be found in the [pyproject](https://github.com/gustavorodarte/weather-api/blob/master/pyproject.toml) file.
 
 
+## Setup
+
+Change in the environment variable `OPEN_WEATHER_MAP_API_TOKEN` on docker-compose file.
+
 ## Running
 
 * Start a container with: `docker-compose run --rm --service-ports app ash`
 * Inside the container run: `poetry install`
 * Start the web server with: `poetry run web_server`
+* The app will be running on http://0.0.0.0:8000
 
+## Using the APP
+
+* Just make a  GET request to http://0.0.0.0:8000/weather/info?{city_name}
 
 ## Testing
 
@@ -36,12 +44,11 @@ Auxiliary libraries were omitted but can be found in the [pyproject](https://git
 * Test the API with: `pytest`
 
 
-## Linting, static check and code style guide
+## Linting and static check
 
-* Run migrations with: `alembic upgrade head`
 * Test the API with: `pytest`
 * Check code style with: `black --check weather`
-* Format code with: `black weather`
+* Format code with: `black weather tests`
 * Lint the code with: `flake8 weather tests`
 * Run static analysis with: `mypy weather tests`
 
